@@ -47,12 +47,6 @@ const Roster = () => {
         return 0;
     });
 
-    const Hui = () =>  {
-        return (
-            console.log('hello')
-        )
-    }
-
     return (
         <Paper>
             <Grid container spacing={2} padding={2}>

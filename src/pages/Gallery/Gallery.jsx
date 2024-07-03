@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout/Layout.jsx";
-import Gallery_Pictures from './components/Gallery_Pictures.jsx'
+import Gallery_Pictures from './components/Gallery_Pictures/Gallery_Pictures.jsx'
 
 const Gallery = () => {
   return (
