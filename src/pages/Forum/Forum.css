@@ -1,0 +1,26 @@
+.App {
+    text-align: center;
+  }
+  
+  .LoginPage {
+    margin: 0 auto;
+    width: 300px;
+  }
+  
+  .RegisterPage {
+    margin: 0 auto;
+    width: 300px;
+  }
+  
+  .AdminTemplate {
+    display: flex;
+  }
+  
+  .AdminTemplate .Drawer {
+    width: 200px;
+  }
+  
+  .AdminTemplate main {
+    flex-grow: 1;
+    padding: 20px;
+  }
