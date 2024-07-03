@@ -30,7 +30,7 @@ const Roster = () => {
         }
     };
 
-    const tableHeaders = ["Character Name", "Class", "Race", "Specialisation", "Professions"];
+    const tableHeaders = ["Character Name", "Class", "Race", "Specialisation", "Professions"]; // add level
 
     const sortedCharacters = characters.slice().sort((a, b) => {
         if (!sortColumn) return 0; 
@@ -47,7 +47,11 @@ const Roster = () => {
         return 0;
     });
 
-    
+    const Hui = () =>  {
+        return (
+            console.log('hello')
+        )
+    }
 
     return (
         <Paper>
