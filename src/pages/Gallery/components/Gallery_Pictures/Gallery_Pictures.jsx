@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
-import imageLibrary from '../../../../src/utils/images'
-import Gallery_Card from './Gallery_Card/Gallery_Card';
+import imageLibrary from '../../../../utils/images'
+import Gallery_Card from '../Gallery_Card/Gallery_Card';
 
 const Gallery_Pictures = () => {
     const stylesGallery = {

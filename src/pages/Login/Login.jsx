@@ -46,6 +46,12 @@ const theme = createTheme({
   },
 });
 
+const mockDatabase = [
+  { email: 'user1@example.com', password: 'password123' },
+  { email: 'user2@example.com', password: 'mypassword' },
+  
+];
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -57,13 +63,19 @@ const Login = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmitLogIn = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email');
+    const password = data.get('password');
+    
+    const user = mockDatabase.find(user => user.email === email && user.password === password);
+    
+    if (user) {
+      console.log('Login successful:', { email });
+    } else {
+      console.log('Login failed: Invalid email or password');
+    }
   };
 
   return (
@@ -93,7 +105,7 @@ const Login = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <Box component="form" noValidate onSubmit={handleSubmitLogIn} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -162,3 +174,4 @@ const Login = () => {
 }
 
 export default Login;
+
