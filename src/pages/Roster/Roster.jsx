@@ -83,7 +83,7 @@ const Roster = () => {
             color: 'purple',
           },
           '& .MuiDataGrid-footerContainer': {
-            color: 'limegreen',
+            color: 'limegreen !important',
           },
           '& .MuiDataGrid-checkboxInput': {
             color: 'limegreen',
@@ -92,9 +92,9 @@ const Roster = () => {
             color: 'limegreen !important',
           },
           '& .MuiDataGrid-pagination':{
-            color: 'white',
+            color: 'white !important',
             '& .MuiPaginationItem-root' :{
-              color: 'white',
+              color: 'white !important',
             }
           }
 

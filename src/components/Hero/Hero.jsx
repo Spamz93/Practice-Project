@@ -7,7 +7,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleApplyClick = () => {
-    navigate('/login')
+    navigate('/achievements')
   }
 
   const handleWatchGameplay = () => {
