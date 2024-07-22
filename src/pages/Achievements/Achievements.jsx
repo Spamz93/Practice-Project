@@ -280,7 +280,7 @@ const Achievements = () => {
                     <TextField
                         fullWidth
                         margin="normal"
-                        label="Armory Link"
+                        label="Warcraft Logs"
                         variant="outlined"
                         type="url"
                         value={url}

@@ -8,6 +8,7 @@ import Forum from './pages/Forum/Forum'
 import Register from './pages/Register/Register'
 import NavBar from "./components/NavBar/NavBar";
 import Login from './pages/Login/Login'
+import Footer from './components/Footer/Footer'
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/register' exact Component={Register} />
         <Route path='/login' exact Component={Login} />
       </Routes>
+      <Footer />
     </>
   );
 };
