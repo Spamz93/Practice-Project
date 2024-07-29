@@ -22,7 +22,6 @@ import {
     DialogContentText,
     DialogTitle
 } from "@mui/material";
-import "./Achievements.css";
 
 const Achievements = () => {
     const [characterName, setCharacterName] = useState("");
@@ -41,7 +40,7 @@ const Achievements = () => {
     const [url, setUrl] = useState("");
     const [selectedOption, setSelectedOption] = useState("");
     const [about, setAbout] = useState("");
-    const [open, setOpen] = useState(false); 
+    const [open, setOpen] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -68,20 +67,13 @@ const Achievements = () => {
                 url,
                 about
             );
-            // napishi SetOpen na true sled kato e success applicationa da se otwarq modala
-            setOpen(true); // 
+            setOpen(true);
 
         } catch (error) {
             console.error("Error during form submission:", error);
         }
     };
 
-    // param za specific role, kato polzwam state setter function, koito wzima prev state-a za argument
-    // towa trqbwa da update-wa spored most recent state.
-
-    // Naprawi spread za argumenta zaradi shallow copy, koeto da preserve vsichki props v roles state-a
-    // obj s key-value pair na role, kato valueto trqbwa da se smenq ako prev. value-to e true stawa false i obratno
-        
     const handleRoleChange = (role) => {
         setRoles((prev) => ({
             ...prev,
@@ -107,16 +99,23 @@ const Achievements = () => {
         setSelectedOption("");
         setAbout("");
     };
-    
-    // handleClose koito da zatwarq modala i da resetwa formata
+
     const handleClose = () => {
-        setOpen(false); 
-        handleReset(); 
+        setOpen(false);
+        handleReset();
     };
 
     return (
         <Container maxWidth="sm">
-            <Paper elevation={3} className="App">
+            <Paper
+                elevation={3}
+                sx={{
+                    backgroundColor: '#663399',
+                    color: 'white',
+                    padding: 2,
+                    borderRadius: 1,
+                }}
+            >
                 <Typography variant="h4" gutterBottom>
                     Guild Application Form
                 </Typography>
@@ -131,6 +130,12 @@ const Achievements = () => {
                             setCharacterName(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -142,6 +147,12 @@ const Achievements = () => {
                             setCharacterClass(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -153,6 +164,12 @@ const Achievements = () => {
                             setSpecialization(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -164,6 +181,12 @@ const Achievements = () => {
                             setProfession(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -175,6 +198,12 @@ const Achievements = () => {
                             setBattleNet(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -186,9 +215,17 @@ const Achievements = () => {
                             setDiscord(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <FormControl component="fieldset" margin="normal">
-                        <FormLabel component="legend">How many times can you raid per week?</FormLabel>
+                        <FormLabel component="legend" sx={{ color: 'white' }}>
+                            How many times can you raid per week?
+                        </FormLabel>
                         <RadioGroup
                             row
                             name="raidFrequency"
@@ -199,33 +236,40 @@ const Achievements = () => {
                         >
                             <FormControlLabel
                                 value="1"
-                                control={<Radio />}
+                                control={<Radio sx={{ color: 'white' }} />}
                                 label="1"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 value="2"
-                                control={<Radio />}
+                                control={<Radio sx={{ color: 'white' }} />}
                                 label="2"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 value="3"
-                                control={<Radio />}
+                                control={<Radio sx={{ color: 'white' }} />}
                                 label="3"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 value="4"
-                                control={<Radio />}
+                                control={<Radio sx={{ color: 'white' }} />}
                                 label="4"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 value="other"
-                                control={<Radio />}
+                                control={<Radio sx={{ color: 'white' }} />}
                                 label="Other"
+                                sx={{ color: 'white' }}
                             />
                         </RadioGroup>
                     </FormControl>
                     <FormControl component="fieldset" margin="normal">
-                        <FormLabel component="legend">Roles you can fill</FormLabel>
+                        <FormLabel component="legend" sx={{ color: 'white' }}>
+                            Roles you can fill
+                        </FormLabel>
                         <FormGroup row>
                             <FormControlLabel
                                 control={
@@ -234,9 +278,11 @@ const Achievements = () => {
                                         onChange={() =>
                                             handleRoleChange("tank")
                                         }
+                                        sx={{ color: 'white' }}
                                     />
                                 }
                                 label="Tank"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 control={
@@ -245,9 +291,11 @@ const Achievements = () => {
                                         onChange={() =>
                                             handleRoleChange("healer")
                                         }
+                                        sx={{ color: 'white' }}
                                     />
                                 }
                                 label="Healer"
+                                sx={{ color: 'white' }}
                             />
                             <FormControlLabel
                                 control={
@@ -256,9 +304,11 @@ const Achievements = () => {
                                         onChange={() =>
                                             handleRoleChange("dps")
                                         }
+                                        sx={{ color: 'white' }}
                                     />
                                 }
                                 label="DPS"
+                                sx={{ color: 'white' }}
                             />
                         </FormGroup>
                     </FormControl>
@@ -266,7 +316,13 @@ const Achievements = () => {
                         variant="contained"
                         component="label"
                         fullWidth
-                        margin="normal"
+                        sx={{
+                            backgroundColor: 'purple',
+                            color: 'limegreen',
+                            '&:hover': {
+                                backgroundColor: 'darkpurple',
+                            },
+                        }}
                     >
                         Upload Screenshot of Character
                         <input
@@ -288,33 +344,46 @@ const Achievements = () => {
                             setUrl(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
                     <FormControl fullWidth margin="normal">
-                        <InputLabel id="select-label">
-                            Experience with Raids
+                        <InputLabel sx={{ color: 'white' }}>
+                            Reason for Applying
                         </InputLabel>
                         <Select
-                            labelId="select-label"
-                            id="select"
                             value={selectedOption}
                             onChange={(e) =>
-                                setSelectedOption(
-                                    e.target.value
-                                )
+                                setSelectedOption(e.target.value)
                             }
+                            sx={{
+                                color: 'limegreen',
+                                '& .MuiSelect-icon': {
+                                    color: 'white',
+                                },
+                            }}
                         >
-                            <MenuItem value="" disabled>
-                                Select your experience
+                            <MenuItem value="raiding">
+                                Raiding
                             </MenuItem>
-                            <MenuItem value="beginner">Beginner</MenuItem>
-                            <MenuItem value="intermediate">Intermediate</MenuItem>
-                            <MenuItem value="advanced">Advanced</MenuItem>
+                            <MenuItem value="pvp">PvP</MenuItem>
+                            <MenuItem value="social">
+                                Social
+                            </MenuItem>
+                            <MenuItem value="other">
+                                Other
+                            </MenuItem>
                         </Select>
                     </FormControl>
                     <TextField
                         fullWidth
                         margin="normal"
-                        label="About Yourself"
+                        label="Tell us about yourself"
+                        variant="outlined"
                         multiline
                         rows={4}
                         value={about}
@@ -322,44 +391,46 @@ const Achievements = () => {
                             setAbout(e.target.value)
                         }
                         required
+                        InputProps={{
+                            sx: { color: 'limegreen' },
+                        }}
+                        InputLabelProps={{
+                            sx: { color: 'white' },
+                        }}
                     />
-                    <Box display="flex" justifyContent="space-between" margin="normal">
-                        <Button
-                            variant="contained"
-                            color="secondary"
-                            onClick={handleReset}
-                        >
-                            Reset
-                        </Button>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                        >
-                            Submit
-                        </Button>
-                    </Box>
-                </Box>
-            </Paper>
-
-            <Dialog
-                open={open}
-                onClose={handleClose}
-            >
-                <DialogTitle>Application Submitted</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        Your application has been successfully submitted. Thank you!
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Close
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        fullWidth
+                        sx={{
+                            backgroundColor: 'purple',
+                            color: 'limegreen',
+                            '&:hover': {
+                                backgroundColor: 'darkpurple',
+                            },
+                            marginTop: 2,
+                        }}
+                    >
+                        Submit
                     </Button>
-                </DialogActions>
-            </Dialog>
+                </Box>
+                <Dialog open={open} onClose={handleClose}>
+                    <DialogTitle>Application Submitted</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Thank you for applying to our guild! We will review your application and get back to you soon.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose} color="primary">
+                            Close
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </Paper>
         </Container>
     );
 };
 
 export default Achievements;
+
