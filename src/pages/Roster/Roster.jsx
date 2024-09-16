@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-
+ 
 const columns = [
   { field: 'id', headerName: 'ID', width: 90 },
   {
@@ -31,10 +31,10 @@ const columns = [
     valueGetter: (value, row) => `${row.firstName || ''} ${row.lastName || ''}`,
   },
 ];
-
+ 
 const Roster = () => {
   const [characters, setCharacters] = useState([]);
-
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,7 +45,7 @@ const Roster = () => {
         }
         const data = await response.json();
         console.log('Data fetched:', data);
-
+ 
         setTimeout(() => {
           setCharacters(data);
           console.log('Characters set in state:', data);
@@ -54,14 +54,14 @@ const Roster = () => {
         console.error('Error fetching data:', error);
       }
     };
-
+ 
     fetchData();
   }, []);
-
+ 
   console.log('Rendering DataGrid with rows:', characters);
-
+ 
   return (
-    <Box sx={{ height: '400', width: '100%' }}>
+    <Box sx={{ height: '400px', width: '100%' }}>
       <DataGrid
         rows={characters}
         columns={columns}
@@ -83,33 +83,24 @@ const Roster = () => {
             color: 'purple',
           },
           '& .MuiDataGrid-footerContainer': {
-            color: 'limegreen !important',
+            color: 'limegreen',
+            '& .MuiTablePagination-root': {
+              color: 'limegreen !important',
+            },
           },
           '& .MuiDataGrid-checkboxInput': {
             color: 'limegreen',
           },
-          '& .Mui-checked' : {
+          '& .Mui-checked': {
             color: 'limegreen !important',
           },
-          '& .MuiDataGrid-pagination':{
-            color: 'white !important',
-            '& .MuiPaginationItem-root' :{
-              color: 'white !important',
-            }
-          }
-
+          '& .MuiPaginationItem-root': {
+            color: 'limegreen !important',
+          },
         }}
       />
     </Box>
   );
 };
-
+ 
 export default Roster;
-
-
-
-
-
-
-
-
