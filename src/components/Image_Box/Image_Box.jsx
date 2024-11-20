@@ -9,13 +9,10 @@ const Image_Box = () => {
         <Box className="hero-img">
           <Box
             component="img"
-            src='../../../public/Goblino_2_transperant.svg'
+            src='../../../public/Goblino_2_transperant.png'
             alt="description"
             sx={{
-              width: "100%",
-              height: "auto",
-              maxWidth: "600px",
-              
+              width: "100%"
             }}
           />
         </Box>

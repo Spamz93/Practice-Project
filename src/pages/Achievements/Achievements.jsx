@@ -50,25 +50,38 @@ const Achievements = () => {
             return;
         }
 
+        const formData = {
+            characterName,
+            characterClass,
+            specialization,
+            profession,
+            battleNet,
+            discord,
+            raidFrequency,
+            roles,
+            resume: resume.name, 
+            url,
+            selectedOption,
+            about,
+        };
+
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-
-            console.log(
-                characterName,
-                characterClass,
-                specialization,
-                profession,
-                battleNet,
-                discord,
-                raidFrequency,
-                selectedOption,
-                roles,
-                resume,
-                url,
-                about
-            );
+            const response = await fetch("https://localhost:7199/applications", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+    
+            const result = await response.json();
+            console.log("Form submitted successfully:", result);
+    
             setOpen(true);
-
         } catch (error) {
             console.error("Error during form submission:", error);
         }

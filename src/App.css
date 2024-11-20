@@ -84,8 +84,8 @@ section {
 }
 .hero-img img {
   width: 100%;
-  height: auto;
-  max-width: 100%;
+  /* height: auto; */
+  /* max-width: 100%; */
   display: block;
 }
 .hero-text a {
@@ -180,7 +180,7 @@ section {
   .hero-img img {
     width: 100%;
     height: auto;
-    max-width: 100%;
+    max-width: 100vw;
   }
   .hero-text h1 {
     font-size: 75px;

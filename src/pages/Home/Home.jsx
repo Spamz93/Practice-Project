@@ -13,7 +13,7 @@ const Home = () => {
         </Grid>
 
         <Grid md={6} item>
-          <Box component="img" max-width={"100%"} src={logo} />
+          <Box component="img" width={"100%"} src={logo} />
         </Grid>
       </Grid>
     </Layout>
